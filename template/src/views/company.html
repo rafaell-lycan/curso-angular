@@ -1,33 +1,36 @@
 <div class="container">
   <header>
     <div class="col-md-8">
-      <h1>Porto Seguro</h1>
+      <h1> {{ vm.company.name }} </h1>
     </div>
 
     <div class="col-md-4 company-logo">
-      <img src="http://placehold.it/100" alt="">
+      <img ng-src=" {{ vm.company.companyLogo }} " alt="{{ vm.company.name }}">
       <p>O</p>
     </div>
 
     <div class="col-md-12">
-      <p><a href="#" target="_blank">company.com.br</a></p>
+      <p><a ng-href="{{ vm.company.website }}" target="_blank">{{ vm.company.website }}</a></p>
     </div>
   </header>
 
+  <pre>
+    {{ vm.company | json }}
+  </pre>
   <div class="clearfix"></div>
 
   <div class="jobs-list">
      <ul>
-        <li class="col-xs-12 item">
+        <li class="col-xs-12 item" ng-repeat="job in vm.company.jobs">
 
           <div class="col-sm-1 hidden-xs company-logo">
-            <img src="http://placehold.it/100" alt="">
+            <img ng-src="{{ vm.company.companyLogo }}" alt="{{vm.company.name}} ">
             <p>O</p>
           </div>
 
           <div class="col-sm-4 col-xs-7 info">
-            <h4>Developer</h4>
-            <a href="">Porto Seguro</a>
+            <h4>{{job.name}}</h4>
+            <a href="#">{{vm.company.name}}</a>
           </div>
 
           <div class="col-sm-4 hidden-xs tags">

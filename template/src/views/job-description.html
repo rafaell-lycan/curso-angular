@@ -1,18 +1,13 @@
 <div class="container">
   <header>
-    <h1>Job Title</h1>
-    <span class="createdAt">2016/01/12</span>
-    <h2>Company Name</h2>
-    <h3>Location <span>| Remove OK</span></h3>
+    <h1> {{ vm.job.name }} </h1>
+    <span class="createdAt"> {{ vm.job.createdAt | date }} </span>
+    <h2> {{ vm.job._company.name }} </h2>
+    <h3> {{ vm.job.location }} <span ng-hide="!vm.job.remote">| Remote OK</span></h3>
 
-    <p><a href="#" target="_blank">company.com.br</a></p>
+    <p><a ng-href="{{ vm.job._company.website }}" target="_blank"> {{ vm.job._company.website }} </a></p>
   </header>
 
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  {{ vm.job.description }}
 
 </div>
