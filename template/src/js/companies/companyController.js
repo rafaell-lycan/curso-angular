@@ -4,16 +4,16 @@
   angular.module('app')
    .controller('companyController', companyController);
 
-  companyController.$inject = ['$routeParams', '$location', 'CompanyService'];
+  companyController.$inject = ['$state', '$location', 'CompanyService'];
 
-  function companyController ($routeParams, $location, CompanyService) {
+  function companyController ($state, $location, CompanyService) {
     var vm = this;
 
-    CompanyService.get({id : $routeParams.id }).$promise
+    CompanyService.get({id : $state.params.id }).$promise
       .then(function (response) {
         vm.company = response;
 
-        return CompanyService.loadJobs({id : $routeParams.id }).$promise;
+        return CompanyService.loadJobs({id : $state.params.id }).$promise;
       })
       .then(function (response) {
         vm.company.jobs = response.items;

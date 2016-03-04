@@ -9,24 +9,32 @@
   </head>
 <body>
 
-  <ng-view></ng-view>
+  <div ui-view='header'></div>
+  <ui-view></ui-view>
+  <div ui-view='footer'></div>
 
   <!-- Dependencies -->
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
 
   <!-- Core -->
   <script src="src/js/app.js"></script>
+  <script src="src/js/app.config.js"></script>
+  <script src="src/js/app.run.js"></script>
   <script src="src/js/app.route.js"></script>
 
   <!-- Services -->
   <script src="src/js/companies/companyService.js"></script>
+  <script src="src/js/jobs/jobService.js"></script>
+  <script src="src/js/auth/TokenHandlerService.js"></script>
+  <script src="src/js/auth/AuthService.js"></script>
 
   <!-- Controllers -->
   <script src="src/js/home/homeController.js"></script>
   <script src="src/js/jobs/jobsController.js"></script>
   <script src="src/js/companies/companyController.js"></script>
+  <script src="src/js/companies/createCompanyController.js"></script>
 
 </body>
 </html>

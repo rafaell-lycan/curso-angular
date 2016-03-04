@@ -4,17 +4,18 @@
   angular.module('app')
    .controller('homeController', homeController);
 
-  homeController.$inject = ['$http'];
+  homeController.$inject = ['JobService'];
 
-  function homeController ($http) {
+  function homeController (JobService) {
     var vm = this;
 
-    $http.get('http://10.0.1.193:3000/api/jobs')
-      .then(function (response) {
-         vm.jobs = response.data.items;
+
+    JobService.get().$promise
+      .then(function(response){
+        vm.jobs = response.items;
       })
-      .catch(function  (err) {
-         console.error(err);
+      .catch(function(error) {
+        console.error(error);
       });
 
   }

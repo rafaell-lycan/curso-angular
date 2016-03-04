@@ -60,9 +60,9 @@
 
           <div class="col-sm-4 col-xs-7 info">
             <h4>
-              <a ng-href="{{ '#/jobs/' + job._id }}">{{ job.name }}</a>
+              <a ui-sref="job-description({id : job._id })">{{ job.name }}</a>
             </h4>
-            <a ng-href="{{ '#/companies/' + job._company._id }}">{{ job._company.name }}</a>
+            <a ui-sref="company-description({id : job._company._id })">{{ job._company.name }}</a>
           </div>
 
           <div class="col-sm-4 hidden-xs tags">

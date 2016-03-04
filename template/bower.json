@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.6",
     "angular": "1.2",
     "angular-route": "1.2",
-    "angular-resource": "1.2"
+    "angular-resource": "1.2",
+    "angular-ui-router": "^0.2.18"
   }
 }

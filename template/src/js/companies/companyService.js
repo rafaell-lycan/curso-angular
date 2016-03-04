@@ -4,11 +4,11 @@
   angular.module('app')
     .factory('CompanyService', CompanyService);
 
-    CompanyService.$inject = ['$resource'];
+    CompanyService.$inject = ['$resource', 'appSettings'];
 
-    function CompanyService ($resource) {
+    function CompanyService ($resource, appSettings) {
 
-      return $resource('http://10.0.1.193:3000/api/companies/:id', {}, {
+      return $resource(appSettings.apiUrl + 'companies/:id', {}, {
         loadJobs :{
           method : 'GET',
           url : 'http://10.0.1.193:3000/api/companies/:id/jobs'
