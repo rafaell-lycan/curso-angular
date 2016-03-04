@@ -3,6 +3,7 @@
 
   angular.module('app')
     .constant('appSettings', {
-      apiUrl : 'http://10.0.1.193:3000/api/'
+      apiUrl : 'http://10.0.1.193:3000/api/',
+      authUrl : 'http://10.0.1.193:3000/auth/'
     });
 })();

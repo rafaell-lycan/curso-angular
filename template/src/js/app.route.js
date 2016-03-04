@@ -59,6 +59,12 @@
         roles : ['admin']
         // controller: 'createCompanyController',
         // controllerAs : 'vm'
+      })
+      .state('login', {
+        url : '/login',
+        templateUrl : 'src/views/login.html',
+        controller: 'LoginController',
+        controllerAs : 'vm'
       });
   }
 
