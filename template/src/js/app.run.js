@@ -8,8 +8,6 @@
 
   function Run ($rootScope, AuthService) {
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromPrams) {
-      console.log(arguments);
-      console.log("->", AuthService.isLoggedIn());
       if(toState.auth && !AuthService.isLoggedIn()) {
         AuthService.authorize();
       }

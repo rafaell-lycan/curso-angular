@@ -10,7 +10,7 @@
     var vm = this;
 
 
-    JobService.get().$promise
+    JobService.get({size : 20, page : 1}).$promise
       .then(function(response){
         vm.jobs = response.items;
       })

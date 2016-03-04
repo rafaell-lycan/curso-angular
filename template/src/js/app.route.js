@@ -56,9 +56,8 @@
         url : '/post-job',
         templateUrl : 'src/views/post-job.html',
         auth : true,
-        roles : ['admin']
-        // controller: 'createCompanyController',
-        // controllerAs : 'vm'
+        controller: 'PostJobController',
+        controllerAs : 'vm'
       })
       .state('login', {
         url : '/login',
